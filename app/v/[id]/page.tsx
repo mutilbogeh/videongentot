@@ -19,6 +19,7 @@ import MessageBox from "@/components/message-box";
 import React from "react";
 import SearchCardList from "@/components/search/search-list";
 import doodstream from "@/lib/doodstream";
+import Script from "next/script";
 
 type PageProps = {
     params: { [key: string]: string | string[] | undefined };
@@ -38,7 +39,7 @@ export async function generateMetadata(
     }
 
     const file = data.result[0];
-    const title = `${file.title} - Bokep Indonesia`;
+    const title = `${file.title}`;
     const description = `${file.title} di Bokep Indonesia Video Bokep Indo Jepang Jav Barat Simontok Viral Terbaru Bocil Ngentot Jilbab Smp Mama Sma`;
     const image = file.splash_img;
     const previousOgImages = (await parent).openGraph?.images || [];
@@ -83,7 +84,7 @@ export default async function Video({ params }: PageProps) {
         const jsonLd2 = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: `${file.title} - Bokep Indonesia`,
+        headline: `${file.title}`,
         image: file.splash_img,
         description: `${file.title} di Bokep Indonesia Video Bokep Indo Jepang Jav Barat Simontok Viral Terbaru Bocil Ngentot Jilbab Smp Mama Sma`,
         url: `https://videongentot.pages.dev/v/${file.filecode}`,
@@ -111,7 +112,7 @@ export default async function Video({ params }: PageProps) {
         const jsonLd3 = {
             '@context': 'https://schema.org', 
             '@type': 'Book', 
-            'name': `${file.title} - Bokep Indonesia`, 
+            'name': `${file.title}`, 
             'aggregateRating': {
             '@type': 'AggregateRating',	
                 'ratingValue': '5',	
@@ -135,7 +136,7 @@ export default async function Video({ params }: PageProps) {
         </section>
             <iframe
                 className="w-full h-[30vh] md:h-[55vh] lg:h-[70vh]"
-                src={`https://ds2play.com/e/${file.filecode}`}
+                src={`https://doodstream.com/e/${file.filecode}`}
                 scrolling="no"
                 title={file.title}
                 frameBorder={0}
@@ -152,7 +153,8 @@ export default async function Video({ params }: PageProps) {
             <h2 className="text-2xl font-bold text-center my-4">
                 Related Video {file.title}
             </h2>
-            <SearchCardList query={file.title.split(" ")[2]} />
+   <Script src="https://js.juicyads.com/jp.php?c=947403z2v256s2x2w2e4z2e4&u=http%3A%2F%2Fwww.juicyads.rocks"/>
+         <SearchCardList query={file.title.split(" ")[2]} />
         </div>
     );
 }
